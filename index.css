@@ -1,0 +1,225 @@
+/* ---- Tokens ---- */
+:root {
+  --bg: #FAFAF8;
+  --ink: #201F1D;
+  --ink-soft: #55534E;
+  --line: #DAD7CF;
+  --accent: #3A4D3C;
+  --paper: #F2F0EA;
+  --serif: 'Fraunces', serif;
+  --sans: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+/* ---- Header / Nav ---- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* ---- Hero ---- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 72px 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero-kicker {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin: 0 0 16px;
+}
+
+.hero-text h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  line-height: 1.15;
+  margin: 0 0 24px;
+  max-width: 12ch;
+}
+
+.hero-copy {
+  color: var(--ink-soft);
+  max-width: 42ch;
+  margin: 0 0 36px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.hero-image img {
+  border-radius: 2px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink);
+}
+
+/* ---- Preview grid ---- */
+.preview {
+  padding: 24px 48px 96px;
+  max-width: 1280px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+}
+
+.preview-kicker {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin: 40px 0 24px;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.preview-grid figure {
+  margin: 0;
+}
+
+.preview-grid img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.preview-grid figcaption {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.text-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 1px solid transparent;
+}
+
+.text-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 48px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.site-footer p { margin: 0; }
+
+/* ---- Responsive ---- */
+@media (max-width: 800px) {
+  .site-header { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .nav { gap: 20px; flex-wrap: wrap; }
+  .hero { grid-template-columns: 1fr; padding: 48px 24px; }
+  .preview { padding: 16px 24px 64px; }
+  .preview-grid { grid-template-columns: 1fr; }
+  .site-footer { flex-direction: column; gap: 12px; align-items: flex-start; }
+}
+
+/* ---- Accessibility ---- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}

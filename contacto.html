@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Lente Sur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="contacto.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="logo">Lente Sur</a>
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="galeria.html" class="nav-link">Galería</a>
+      <a href="sobre.html" class="nav-link">Sobre mí</a>
+      <a href="contacto.html" class="nav-link active">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact">
+      <div class="contact-intro">
+        <p class="kicker">Contacto</p>
+        <h1>Regístrate para reservar</h1>
+        <p class="intro-copy">
+          Completa el formulario para crear tu registro. Te escribiré en
+          menos de 48 horas para confirmar fecha, lugar y detalles de
+          la sesión o del taller.
+        </p>
+        <p class="intro-note">
+          Nota: este formulario es una demostración de interfaz; los
+          datos no se envían ni se guardan en ninguna base de datos.
+        </p>
+        <p class="intro-copy">
+          También puedes escribir directamente a
+          <a href="mailto:hola@lentesur.co" class="text-link">hola@lentesur.co</a>.
+        </p>
+      </div>
+
+      <form class="register-form" action="#" method="post" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+        </div>
+
+        <div class="field">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Opcional">
+        </div>
+
+        <div class="field">
+          <label for="interes">Motivo de contacto</label>
+          <select id="interes" name="interes" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="sesion">Reservar una sesión</option>
+            <option value="taller">Inscribirme a un taller</option>
+            <option value="prensa">Encargo o colaboración</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="field field-full">
+          <label for="mensaje">Cuéntame un poco más</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Fecha aproximada, lugar, o cualquier detalle que quieras compartir"></textarea>
+        </div>
+
+        <div class="field field-checkbox field-full">
+          <input type="checkbox" id="acepto" name="acepto" required>
+          <label for="acepto">Acepto ser contactado por este medio y quiero registrarme.</label>
+        </div>
+
+        <div class="field-full form-actions">
+          <button type="submit" class="btn btn-primary">Crear registro</button>
+          <button type="reset" class="btn btn-ghost">Limpiar campos</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Lente Sur. Todos los derechos reservados.</p>
+    <a href="sobre.html" class="text-link">Sobre mí</a>
+  </footer>
+
+</body>
+</html>
